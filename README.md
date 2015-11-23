@@ -214,6 +214,56 @@ for (ABCUser *user in users) {
 }
 ```
 
+#### Raw sql query
+
+You can using raw sql query and mapping result as you need.
+
+```Objective-C
+NSString *sql = @"SELECT book.id AS id, book.name AS bookName, book.year AS year, author.Name AS authorName "
+        "FROM Book book "
+        "INNER JOIN Author AS author ON book.authorId = author.id "
+        "WHERE author.id = ?";
+RawQuery *query = [[RawQuery alloc] initDefaultConnection];
+NSArray *result = [query rawQuery:sql arguments:@[@"2"] class:[BookAuthorModel class]];
+```
+
+or
+
+```Objective-C
+NSString *sql = @"SELECT book.id AS id, book.name AS bookName, book.year AS year, author.Name AS authorName "
+        "FROM Book book "
+        "INNER JOIN Author AS author ON book.authorId = author.id";
+RawQuery *query = [[RawQuery alloc] initDefaultConnection];
+NSArray *result = [query rawQuery:sql 
+                        arguments:nil 
+                        converter:^NSObject *(NSDictionary *rawResult) {
+                            BookAuthorModel *model = [[BookAuthorModel alloc] init];
+
+                            [model setBookId:rawResult[@"id"]];
+                            [model setBookName:rawResult[@"bookName"]];
+                            [model setBookYear:rawResult[@"year"]];
+                            [model setAuthorName:rawResult[@"authorName"]];
+
+                            return model;
+                        }];
+```
+
+or
+
+```Objective-C
+NSString *sql = @"SELECT book.id AS id, book.name AS bookName, book.year AS year, author.Name AS authorName "
+        "FROM Book book "
+        "INNER JOIN Author AS author ON book.authorId = author.id";
+RawQuery *query = [[RawQuery alloc] initDefaultConnection];
+NSArray *result = [query rawQuery:sql
+                        arguments:nil
+                mappingDictionary:@{@"id" : @"bookId",
+                        @"bookName" : @"bookName",
+                        @"bookYear" : @"bookYear",
+                        @"authorName" : @"authorName"}
+                            class:[BookAuthorModel class]];
+```
+
 #### Count records by where conditions
 
 ```Objective-C
