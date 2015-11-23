@@ -16,7 +16,7 @@ An extension of [FMDB](https://github.com/ccgus/fmdb) to provide ORM and migrati
 * [Database Manager](#database-manager)
 * [Migration](#migration)
 * [ORM](#orm)
-* [Raw Query] (#raw-query)
+* [Raw sql query](#Raw-sql-query)
 * [Import data from CSV](#import-data-from-csv)
 
 ### Database Manager
