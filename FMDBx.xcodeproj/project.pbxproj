@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28DE789E12C74736A72958BC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE26C0112A994742AF2509ED /* libPods.a */; };
+		92E32BBE1C03D0D800539618 /* FMXRawQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E32BBD1C03D0D800539618 /* FMXRawQuery.m */; };
 		C254D20419317EDC0040AE69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C254D20319317EDC0040AE69 /* Foundation.framework */; };
 		C254D20619317EDC0040AE69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C254D20519317EDC0040AE69 /* CoreGraphics.framework */; };
 		C254D20819317EDC0040AE69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C254D20719317EDC0040AE69 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		24F5249AA8EE3783E0BD1DCE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		92E32BBC1C03D0D800539618 /* FMXRawQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXRawQuery.h; sourceTree = "<group>"; };
+		92E32BBD1C03D0D800539618 /* FMXRawQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXRawQuery.m; sourceTree = "<group>"; };
 		AE26C0112A994742AF2509ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C254D20019317EDC0040AE69 /* FMDBx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMDBx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C254D20319317EDC0040AE69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -224,6 +227,8 @@
 		C254D23219317F720040AE69 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				92E32BBC1C03D0D800539618 /* FMXRawQuery.h */,
+				92E32BBD1C03D0D800539618 /* FMXRawQuery.m */,
 				C254D2331931805B0040AE69 /* FMDBx.h */,
 				C254D2341931805B0040AE69 /* FMXDatabaseConfiguration.h */,
 				C254D2351931805B0040AE69 /* FMXDatabaseConfiguration.m */,
@@ -437,6 +442,7 @@
 				C254D2401931805B0040AE69 /* FMXDatabaseConfiguration.m in Sources */,
 				C25B3DB9193320BE00174E72 /* FMXColumnMap.m in Sources */,
 				C25B3DAF193239B300174E72 /* FMXHelpers.m in Sources */,
+				92E32BBE1C03D0D800539618 /* FMXRawQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
