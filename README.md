@@ -10,10 +10,6 @@ An extension of [FMDB](https://github.com/ccgus/fmdb) to provide ORM and migrati
 
 > Note: I am testing this product on the above condition.
 
-## Installation
-
-You can install FMDBx via [CocoaPods](http://cocoapods.org).
-Add the following line to your Podfile.
 
 ```
 pod 'FMDBx'
