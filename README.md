@@ -219,7 +219,7 @@ NSString *sql = @"SELECT book.id AS id, book.name AS bookName, book.year AS year
         "FROM Book book "
         "INNER JOIN Author AS author ON book.authorId = author.id "
         "WHERE author.id = ?";
-RawQuery *query = [[RawQuery alloc] initDefaultConnection];
+FMXRawQuery *query = [[FMXRawQuery alloc] initDefaultConnection];
 NSArray *result = [query rawQuery:sql arguments:@[@"2"] class:[BookAuthorModel class]];
 ```
 
@@ -229,7 +229,7 @@ or
 NSString *sql = @"SELECT book.id AS id, book.name AS bookName, book.year AS year, author.Name AS authorName "
         "FROM Book book "
         "INNER JOIN Author AS author ON book.authorId = author.id";
-RawQuery *query = [[RawQuery alloc] initDefaultConnection];
+FMXRawQuery *query = [[FMXRawQuery alloc] initDefaultConnection];
 NSArray *result = [query rawQuery:sql 
                         arguments:nil 
                         converter:^NSObject *(NSDictionary *rawResult) {
@@ -250,10 +250,11 @@ or
 NSString *sql = @"SELECT book.id AS id, book.name AS bookName, book.year AS year, author.Name AS authorName "
         "FROM Book book "
         "INNER JOIN Author AS author ON book.authorId = author.id";
-RawQuery *query = [[RawQuery alloc] initDefaultConnection];
+FMXRawQuery *query = [[FMXRawQuery alloc] initDefaultConnection];
 NSArray *result = [query rawQuery:sql
                         arguments:nil
-                mappingDictionary:@{@"id" : @"bookId",
+                mappingDictionary:@{
+                        @"id" : @"bookId", // field from query -> filed from object
                         @"bookName" : @"bookName",
                         @"bookYear" : @"bookYear",
                         @"authorName" : @"authorName"}
