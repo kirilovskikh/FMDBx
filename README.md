@@ -11,10 +11,6 @@ An extension of [FMDB](https://github.com/ccgus/fmdb) to provide ORM and migrati
 > Note: I am testing this product on the above condition.
 
 
-```
-pod 'FMDBx'
-```
-
 ## Usage
 
 * [Database Manager](#database-manager)
